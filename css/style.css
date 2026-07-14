@@ -1438,17 +1438,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%;
   overflow: hidden;
   position: relative;
-}
-
-.clients-slider__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  backdrop-filter: grayscale(100%);
-  -webkit-backdrop-filter: grayscale(100%);
-  mask-image: linear-gradient(to right, black 0%, black 15%, transparent 35%, transparent 65%, black 85%, black 100%);
-  -webkit-mask-image: linear-gradient(to right, black 0%, black 15%, transparent 35%, transparent 65%, black 85%, black 100%);
+  padding: var(--sp-12) 0;
 }
 
 .clients-slider::before,
@@ -1479,16 +1469,12 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .clients-slider__track img {
-  height: 120px;
-  width: auto;
-  margin: 0 var(--sp-8);
+  width: 150px;
+  height: 80px;
+  margin: 0 var(--sp-6);
   object-fit: contain;
-  opacity: 0.8;
-  transition: opacity var(--dur) var(--ease);
-}
-
-.clients-slider__track img:hover {
-  opacity: 1;
+  will-change: transform;
+  position: relative;
 }
 
 @keyframes scroll {

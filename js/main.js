@@ -149,4 +149,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(s => activeObserver.observe(s));
   }
+
+  /* ---------- Clients Dynamic Scaling ---------- */
+  const slider = document.querySelector('.clients-slider');
+  if (slider) {
+    let isSliderVisible = false;
+    const observer = new IntersectionObserver((entries) => {
+      isSliderVisible = entries[0].isIntersecting;
+    });
+    observer.observe(slider);
+
+    const logos = slider.querySelectorAll('img');
+    
+    function updateLogoScales() {
+      if (isSliderVisible) {
+        const windowCenter = window.innerWidth / 2;
+        const maxDistance = window.innerWidth / 3; 
+        
+        logos.forEach(logo => {
+          const rect = logo.getBoundingClientRect();
+          const logoCenter = rect.left + rect.width / 2;
+          const distance = Math.abs(windowCenter - logoCenter);
+          
+          let scale = 2 - (distance / maxDistance);
+          scale = Math.max(1, Math.min(2, scale)); 
+          
+          logo.style.transform = `scale(${scale})`;
+          logo.style.zIndex = Math.round(scale * 10);
+        });
+      }
+      requestAnimationFrame(updateLogoScales);
+    }
+    requestAnimationFrame(updateLogoScales);
+  }
 });
