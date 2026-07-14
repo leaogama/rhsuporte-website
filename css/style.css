@@ -370,8 +370,8 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ---------- Hero ---------- */
 .hero {
-  padding-top: calc(var(--header-h) + var(--sp-20));
-  padding-bottom: var(--sp-24);
+  padding-top: calc(var(--header-h) + var(--sp-10));
+  padding-bottom: var(--sp-10);
   background: linear-gradient(160deg, var(--white) 0%, var(--gray-50) 50%, var(--blue-bg) 100%);
   position: relative;
   overflow: hidden;
@@ -422,7 +422,7 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
+  min-height: 320px;
 }
 
 .hero__illustration {
