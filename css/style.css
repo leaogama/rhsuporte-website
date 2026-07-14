@@ -1440,6 +1440,17 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
 }
 
+.clients-slider__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  backdrop-filter: grayscale(100%);
+  -webkit-backdrop-filter: grayscale(100%);
+  mask-image: linear-gradient(to right, black 0%, black 15%, transparent 35%, transparent 65%, black 85%, black 100%);
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 15%, transparent 35%, transparent 65%, black 85%, black 100%);
+}
+
 .clients-slider::before,
 .clients-slider::after {
   content: "";
@@ -1472,12 +1483,12 @@ button { font-family: inherit; cursor: pointer; }
   width: auto;
   margin: 0 var(--sp-8);
   object-fit: contain;
-  filter: grayscale(100%) opacity(60%);
-  transition: filter var(--dur) var(--ease);
+  opacity: 0.8;
+  transition: opacity var(--dur) var(--ease);
 }
 
 .clients-slider__track img:hover {
-  filter: grayscale(0%) opacity(100%);
+  opacity: 1;
 }
 
 @keyframes scroll {
