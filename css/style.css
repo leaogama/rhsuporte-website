@@ -1337,9 +1337,9 @@ button { font-family: inherit; cursor: pointer; }
     --header-h: 64px;
   }
 
-  .section { padding: var(--sp-16) 0; }
-  .section__header { margin-bottom: var(--sp-10); }
-  .section__title { font-size: 1.75rem; }
+  .section { padding: var(--sp-10) 0; }
+  .section__header { margin-bottom: var(--sp-8); }
+  .section__title { font-size: 1.5rem; }
 
   .mobile-toggle { display: flex; }
 
@@ -1377,10 +1377,16 @@ button { font-family: inherit; cursor: pointer; }
     text-align: center;
   }
 
-  .hero__subtitle { margin: 0 auto var(--sp-8); }
-  .hero__title { font-size: 2rem; }
-  .btn-group { justify-content: center; }
+  .hero__subtitle { margin: 0 auto var(--sp-8); font-size: 1rem; }
+  .hero__title { font-size: 1.75rem; }
+  .btn-group { flex-direction: column; width: 100%; gap: var(--sp-4); }
+  .btn-group .btn { width: 100%; justify-content: center; }
   .hero__visual { display: none; }
+
+  .tabs__header { flex-direction: column; overflow-x: visible; }
+  .tab-btn { justify-content: center; width: 100%; border-bottom: 1px solid var(--gray-200); }
+  .tab-pane__inner { flex-direction: column-reverse; padding: var(--sp-6); gap: var(--sp-6); }
+  .tab-pane__visual { width: 100%; }
 
   .solutions__featured { grid-template-columns: 1fr; }
   .solutions__grid { grid-template-columns: 1fr; }
