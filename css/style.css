@@ -1462,18 +1462,18 @@ button { font-family: inherit; cursor: pointer; }
 
 .clients-slider__track {
   display: flex;
-  width: calc(300px * 40); /* 20 imgs * 2 */
+  width: max-content;
   animation: scroll 60s linear infinite;
   align-items: center;
 }
 
 .clients-slider__track img {
-  width: 300px;
-  padding: 0 var(--sp-2);
+  height: 120px;
+  width: auto;
+  margin: 0 var(--sp-8);
   object-fit: contain;
   filter: grayscale(100%) opacity(60%);
   transition: filter var(--dur) var(--ease);
-  max-height: 120px;
 }
 
 .clients-slider__track img:hover {
@@ -1482,5 +1482,5 @@ button { font-family: inherit; cursor: pointer; }
 
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-300px * 20)); }
+  100% { transform: translateX(-50%); }
 }
